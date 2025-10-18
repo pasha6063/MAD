@@ -22,8 +22,8 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _nameCtrl = TextEditingController(text: "Gaganpur Pasha");
-  String _description =
+  final TextEditingController _nameCtrl = TextEditingController(text: "Ghazanfar Pasha");
+  final _description =
       "A friendly student learning Flutter and preparing a neat profile screen.";
 
   @override
