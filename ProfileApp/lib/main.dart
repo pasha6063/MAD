@@ -13,13 +13,11 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
-
 class _ProfileScreenState extends State<ProfileScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _nameCtrl = TextEditingController(text: "Ghazanfar Pasha");
@@ -39,7 +37,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
         const SnackBar(content: Text('Name saved!')),
       );
       setState(() {
-        // optionally update something with the new name
       });
     }
   }
@@ -52,18 +49,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          // Use a column for the main layout
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Profile picture (using CircleAvatar with Icon so no asset needed)
               const CircleAvatar(
                 radius: 48,
                 child: Icon(Icons.person, size: 48),
               ),
               const SizedBox(height: 12),
 
-              // RichText: bold name, smaller email
               RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(
@@ -82,7 +76,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               const SizedBox(height: 12),
 
-              // Row with two buttons
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -108,7 +101,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               const SizedBox(height: 16),
 
-              // Container with background color and padding for short description
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(12),
@@ -120,7 +112,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               const SizedBox(height: 16),
 
-              // Form with TextField to edit username and show validation
               Form(
                 key: _formKey,
                 child: Row(
@@ -140,7 +131,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           return null;
                         },
                         onChanged: (v) {
-                          // Update UI immediately so RichText shows name live:
                           setState(() {});
                         },
                       ),
@@ -154,10 +144,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
 
-              // Spacer pushes orientation text to bottom
               const Spacer(),
 
-              // Orientation display using MediaQuery
               Text(
                 'Orientation: ${orientation == Orientation.portrait ? "Portrait" : "Landscape"}',
                 style: const TextStyle(fontStyle: FontStyle.italic),
