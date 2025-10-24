@@ -1,0 +1,1 @@
+D:\Github\MAD\student_task_manager\android\app\src\main\kotlin\com\example\student_task_manager\MainActivity.kt
